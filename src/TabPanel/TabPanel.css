@@ -1,0 +1,33 @@
+.tabList {
+    display: flex;
+    border: 1px solid #763300;
+    width: 300px; /* fix */
+}
+
+.tab {
+    height: 50px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid #763300;
+}
+
+.tab:last-child {
+    border-right: 0;
+}
+
+.tab:active, .tab:focus {
+    z-index: 100;
+    outline-color: forestgreen;
+}
+
+.activeTab {
+    background-color: #d7b787;
+}
+
+.panel {
+    border: 1px solid #763300;
+    outline-color: forestgreen;
+    width: 300px; /* fix */
+    height: 200px; /* fix */
+}

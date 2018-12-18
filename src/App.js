@@ -1,28 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import TabPanel, { TabList, Tab, Panels, Panel } from './TabPanel';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className='app'>
+    <TabPanel>
+      <TabList ariaLabel="Types of coffee">
+        <Tab ariaControls={'dripCoffeeTab'} ariaLabelledbyId={'drip coffee'}>Drip Coffee</Tab>
+        <Tab ariaControls={'latteTab'} ariaLabelledbyId={'latte'}>Latte</Tab>
+        <Tab ariaControls={'espressoTab'} ariaLabelledbyId={'espresso'}>Espresso</Tab>
+      </TabList>
+      <Panels>
+        <Panel controlsId={'dripCoffeeTab'} ariaLabelledby={'drip coffee'}>
+          <p>This is the drip coffee panel</p>
+          <a href="https://www.google.com">To google</a>
+        </Panel>
+        <Panel controlsId={'latteTab'} ariaLabelledby={'latte'}>This is the latte panel</Panel>
+        <Panel controlsId={'espressoTab'} ariaLabelledby={'espresso'}>This is the espresso panel</Panel>
+      </Panels>
+    </TabPanel>
+  </div >
+);
 
 export default App;
